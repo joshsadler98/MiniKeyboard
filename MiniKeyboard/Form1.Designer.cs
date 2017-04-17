@@ -30,14 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.button20 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.lol = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.ModeButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -52,17 +62,7 @@
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ModeTxt = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +77,79 @@
             this.toolStrip1.Size = new System.Drawing.Size(592, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripSeparator1,
+            this.toolStripMenuItem2,
+            this.toolStripSeparator2,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4,
+            this.toolStripSeparator4,
+            this.toolStripMenuItem5});
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.ShowDropDownArrow = false;
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
+            this.toolStripDropDownButton1.Text = "File";
+            this.toolStripDropDownButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Text = "New";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem2.Text = "Open";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem3.Text = "Save";
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem4.Text = "Save as";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem5.Text = "Exit";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(64, 22);
+            this.toolStripButton1.Text = "Configure";
             // 
             // richTextBox1
             // 
@@ -114,16 +187,16 @@
             this.button20.Text = "Enter";
             this.button20.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // lol
             // 
-            this.button11.BackColor = System.Drawing.Color.Yellow;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(353, 281);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(57, 49);
-            this.button11.TabIndex = 34;
-            this.button11.Text = "Send \r\nPre-\r\ndicted";
-            this.button11.UseVisualStyleBackColor = false;
+            this.lol.BackColor = System.Drawing.Color.Yellow;
+            this.lol.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lol.Location = new System.Drawing.Point(353, 281);
+            this.lol.Name = "lol";
+            this.lol.Size = new System.Drawing.Size(57, 49);
+            this.lol.TabIndex = 34;
+            this.lol.Text = "Send \r\nPre-\r\ndicted";
+            this.lol.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
@@ -147,16 +220,17 @@
             this.button9.Text = "Next";
             this.button9.UseVisualStyleBackColor = false;
             // 
-            // button10
+            // ModeButton
             // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(168, 281);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(57, 49);
-            this.button10.TabIndex = 45;
-            this.button10.Text = "Mode";
-            this.button10.UseVisualStyleBackColor = false;
+            this.ModeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.ModeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ModeButton.Location = new System.Drawing.Point(168, 281);
+            this.ModeButton.Name = "ModeButton";
+            this.ModeButton.Size = new System.Drawing.Size(57, 49);
+            this.ModeButton.TabIndex = 45;
+            this.ModeButton.Text = "Mode";
+            this.ModeButton.UseVisualStyleBackColor = false;
+            this.ModeButton.Click += new System.EventHandler(this.ModeClick_Click);
             // 
             // button2
             // 
@@ -310,94 +384,22 @@
             this.button19.Text = "# \r\n0.00";
             this.button19.UseVisualStyleBackColor = false;
             // 
-            // toolStripDropDownButton1
+            // ModeTxt
             // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripSeparator1,
-            this.toolStripMenuItem2,
-            this.toolStripSeparator2,
-            this.toolStripMenuItem3,
-            this.toolStripMenuItem4,
-            this.toolStripSeparator4,
-            this.toolStripMenuItem5});
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.ShowDropDownArrow = false;
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(29, 22);
-            this.toolStripDropDownButton1.Text = "File";
-            this.toolStripDropDownButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem1.Text = "New";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem2.Text = "Open";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem3.Text = "Save";
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem4.Text = "Save as";
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem5.Text = "Exit";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(64, 22);
-            this.toolStripButton1.Text = "Configure";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(353, 240);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(68, 20);
-            this.textBox1.TabIndex = 60;
-            this.textBox1.Text = "Multi-Press";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ModeTxt.Location = new System.Drawing.Point(353, 240);
+            this.ModeTxt.Name = "ModeTxt";
+            this.ModeTxt.ReadOnly = true;
+            this.ModeTxt.Size = new System.Drawing.Size(68, 20);
+            this.ModeTxt.TabIndex = 60;
+            this.ModeTxt.Text = "Multi-Press";
+            this.ModeTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 566);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ModeTxt);
             this.Controls.Add(this.button17);
             this.Controls.Add(this.button18);
             this.Controls.Add(this.button19);
@@ -412,10 +414,10 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button10);
+            this.Controls.Add(this.ModeButton);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button11);
+            this.Controls.Add(this.lol);
             this.Controls.Add(this.button20);
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.richTextBox2);
@@ -437,10 +439,10 @@
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button lol;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button ModeButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
@@ -465,7 +467,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ModeTxt;
     }
 }
 

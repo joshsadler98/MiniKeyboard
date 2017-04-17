@@ -17,6 +17,19 @@ namespace MiniKeyboard
             InitializeComponent();
         }
 
+        private void ModeClick_Click(object sender, EventArgs e)
+        {
+            if(this.ModeTxt.Text == "Multi-Press")
+            {
+                this.ModeTxt.Text = "Prediction";
+            }
+            else
+            {
+                this.ModeTxt.Text = "Multi-Press";
+            }
+        }
+
+
         
     }
 }
