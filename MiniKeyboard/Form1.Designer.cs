@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.txtBoxWordView = new System.Windows.Forms.RichTextBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
@@ -63,6 +64,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.listBoxKey7 = new System.Windows.Forms.ListBox();
+            this.ButtonPressTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -403,6 +405,10 @@
             this.listBoxKey7.Size = new System.Drawing.Size(29, 30);
             this.listBoxKey7.TabIndex = 62;
             // 
+            // ButtonPressTimer
+            // 
+            this.ButtonPressTimer.Tick += new System.EventHandler(this.ButtonPressTimer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,6 +486,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configureToolStripMenuItem;
         private System.Windows.Forms.ListBox listBoxKey7;
+        private System.Windows.Forms.Timer ButtonPressTimer;
     }
 }
 
