@@ -16,6 +16,7 @@ namespace MiniKeyboard
         private bool[] Bool_is_button_pressed = new bool[0x13]; //Boolean created for if the button is pressed by user
         private ListBox Global_Listbox = new ListBox();
         private int int_ListBox_Index;
+        private string Str_KeyStrokes;
         public Form1()
         {
             InitializeComponent();
@@ -56,7 +57,7 @@ namespace MiniKeyboard
             this.txtBoxWordView.Text = this.txtBoxWordView.Text.Remove(this.txtBoxWordView.Text.Length - 1);
             if (Convert.ToString(this.Global_Listbox.Items[this.int_ListBox_Index]) == "~")
             {
-                this.txtBoxWordView.AppendText(",");
+                this.txtBoxWordView.AppendText(",");//Changes the text to output "," instead of ~
             }
             else
             {
