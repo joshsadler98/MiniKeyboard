@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.txtBoxWordView = new System.Windows.Forms.RichTextBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.button20 = new System.Windows.Forms.Button();
             this.lol = new System.Windows.Forms.Button();
@@ -74,13 +74,13 @@
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
-            // richTextBox2
+            // txtBoxWordView
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(159, 240);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(189, 23);
-            this.richTextBox2.TabIndex = 2;
-            this.richTextBox2.Text = "";
+            this.txtBoxWordView.Location = new System.Drawing.Point(159, 240);
+            this.txtBoxWordView.Name = "txtBoxWordView";
+            this.txtBoxWordView.Size = new System.Drawing.Size(189, 23);
+            this.txtBoxWordView.TabIndex = 2;
+            this.txtBoxWordView.Text = "";
             // 
             // richTextBox3
             // 
@@ -157,6 +157,7 @@
             this.btn7.TabIndex = 49;
             this.btn7.Text = "7\r\n. , \"";
             this.btn7.UseVisualStyleBackColor = false;
+            this.btn7.Click += new System.EventHandler(this.btn7_Click);
             // 
             // button3
             // 
@@ -429,7 +430,7 @@
             this.Controls.Add(this.lol);
             this.Controls.Add(this.button20);
             this.Controls.Add(this.richTextBox3);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.txtBoxWordView);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -445,7 +446,7 @@
         #endregion
 
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox txtBoxWordView;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.Button button20;
         private System.Windows.Forms.Button lol;

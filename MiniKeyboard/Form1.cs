@@ -29,7 +29,14 @@ namespace MiniKeyboard
             }
         }
 
-
-        
+        private void btn7_Click(object sender, EventArgs e)
+        {
+            this.Button_Reponse(sender, e, this.btn7, this.listBoxKey7, 7);
+        }
+        private void Button_Reponse(object sender, EventArgs e, Button button_clicked, ListBox which_listbox, int button_case_number)
+        {
+            
+        }
+      
     }
 }
