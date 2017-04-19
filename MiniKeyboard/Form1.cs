@@ -17,6 +17,7 @@ namespace MiniKeyboard
         private ListBox Global_Listbox = new ListBox();
         private int int_ListBox_Index;
         private string Str_KeyStrokes;
+        private int Int_Interval_Required = 800;
         public Form1()
         {
             InitializeComponent();
