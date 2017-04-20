@@ -12,12 +12,12 @@ namespace MiniKeyboard
 {
     public partial class Form1 : Form
     {
-        private bool Bool_user_first_click; //Boolean created for user first click of button
-        private bool[] Bool_is_button_pressed = new bool[0x13]; //Boolean created for if the button is pressed by user
-        private ListBox Global_Listbox = new ListBox();
+        private bool Bool_user_first_click = true; //Boolean created for user first click of button
+        private bool[] Bool_is_button_pressed = new bool[0x100]; //Arrary created for if the button is pressed by user
+        private ListBox Global_Listbox = new ListBox(); //Creates a private listBox with the variable name Global_Listbox
         private int int_ListBox_Index;
-        private string Str_KeyStrokes;
-        private int Int_Interval_Required = 800;
+        private string Str_KeyStrokes; //String variable created for 
+        private int Int_Interval_Required = 700;
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace MiniKeyboard
 
         private void ModeClick_Click(object sender, EventArgs e)
         {
-            if(this.ModeTxt.Text == "Multi-Press")
+            if(this.ModeTxt.Text == "Multi-Press") //Method created to change text between multi-press and prediction when user clicks button
             {
                 this.ModeTxt.Text = "Prediction";
             }
@@ -37,18 +37,77 @@ namespace MiniKeyboard
 
         private void btn7_Click(object sender, EventArgs e)
         {
-            this.Button_Reponse(sender, e, this.btn7, this.listBoxKey7, 7);
+            this.Button_Reponse(sender, e, this.btn7, this.listBoxKey7, 7); //Passes variables (to button response method) for clicking button 7 to get a specfiic response for that button
         }
         private void Button_Reponse(object sender, EventArgs e, Button button_clicked, ListBox which_listbox, int button_case_number)
         {
             if (this.Was_A_Different_Button_Pressed(button_clicked.TabIndex))//Calls method to check to see if another button has been pressed by user
             {
-
+                this.ButtonPressTimer_Tick(sender, e); 
             }
+            if (!(this.ModeTxt.Text == "Multi-Press")) //If 
+            {
+                switch (button_case_number)
+                {
+                    case 1:
+                        this.Str_KeyStrokes = this.Str_KeyStrokes + "*";
+                        goto Label_Case;
+
+                    case 2:
+                        this.Str_KeyStrokes = this.Str_KeyStrokes + "#";
+                        goto Label_Case;
+                }
+                this.Str_KeyStrokes = this.Str_KeyStrokes + Convert.ToString(button_case_number); //Uses the variable Str_KeyStrokes for when the user clicks one of the character buttons the key number will be appeneded to this variable
+            }
+            else
+            {
+                if (!this.Bool_user_first_click)
+                {
+                    this.ButtonPressTimer.Enabled = false;
+                    this.int_ListBox_Index++;
+                    if (this.int_ListBox_Index > (which_listbox.Items.Count - 1))
+                    {
+                        this.int_ListBox_Index = 0;
+                    }
+                    this.txtBoxWordView.Text = this.txtBoxWordView.Text.Remove(this.txtBoxWordView.Text.Length - 1); //Changes the text of the rich text box
+                    this.txtBoxWordView.AppendText(Convert.ToString(which_listbox.Items[this.int_ListBox_Index])); //Changes the text depending on which list character
+                    this.ButtonPressTimer.Enabled = true; //Enables the timer
+                    return;
+                }
+                this.Bool_user_first_click = false;
+                this.ButtonPressTimer.Enabled = true;
+                this.txtBoxWordView.AppendText(Convert.ToString(which_listbox.Items[this.int_ListBox_Index])); //Changes the text in the wordView textbox to the first character in the list
+                for (int i = 0; i <= (which_listbox.Items.Count - 1); i++)
+                {
+                    this.Global_Listbox.Items.Add(Convert.ToString(which_listbox.Items[i])); //Gets how many times the user clicks the button and matches it to the correct character in the list
+                }
+                this.Bool_is_button_pressed[button_clicked.TabIndex] = true; 
+                switch (button_case_number)
+                {
+                    case 1:
+                        this.Str_KeyStrokes = this.Str_KeyStrokes + "*";
+                        break;
+
+                    case 2:
+                        this.Str_KeyStrokes = this.Str_KeyStrokes + "#";
+                        break;
+
+                    default:
+                        this.Str_KeyStrokes = this.Str_KeyStrokes + Convert.ToString(button_case_number);
+                        break;
+                }
+                this.txtBoxKeysPressed.Text = this.Str_KeyStrokes;
+                return;
+            }
+        Label_Case:
+            this.txtBoxKeysPressed.Text = this.Str_KeyStrokes;
+            
+            
+               
         }
-        private bool Was_A_Different_Button_Pressed(int button_pressed)
+        private bool Was_A_Different_Button_Pressed(int Button_Pressed)
         {
-            return (!this.Bool_user_first_click && !this.Bool_is_button_pressed[button_pressed]);//Method created to check if another button has been pressed by the user
+            return (!this.Bool_user_first_click && !this.Bool_is_button_pressed[Button_Pressed]);//Method created to check if another button has been pressed by the user
         }
 
         private void ButtonPressTimer_Tick(object sender, EventArgs e)

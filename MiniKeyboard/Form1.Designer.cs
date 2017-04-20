@@ -65,6 +65,7 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.listBoxKey7 = new System.Windows.Forms.ListBox();
             this.ButtonPressTimer = new System.Windows.Forms.Timer(this.components);
+            this.txtBoxKeysPressed = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -403,17 +404,28 @@
             this.listBoxKey7.Location = new System.Drawing.Point(447, 296);
             this.listBoxKey7.Name = "listBoxKey7";
             this.listBoxKey7.Size = new System.Drawing.Size(29, 30);
-            this.listBoxKey7.TabIndex = 62;
+            this.listBoxKey7.TabIndex = 4;
+            this.listBoxKey7.Visible = false;
             // 
             // ButtonPressTimer
             // 
+            this.ButtonPressTimer.Interval = 700;
             this.ButtonPressTimer.Tick += new System.EventHandler(this.ButtonPressTimer_Tick);
+            // 
+            // txtBoxKeysPressed
+            // 
+            this.txtBoxKeysPressed.Location = new System.Drawing.Point(447, 446);
+            this.txtBoxKeysPressed.Name = "txtBoxKeysPressed";
+            this.txtBoxKeysPressed.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxKeysPressed.TabIndex = 15;
+            this.txtBoxKeysPressed.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 566);
+            this.Controls.Add(this.txtBoxKeysPressed);
             this.Controls.Add(this.listBoxKey7);
             this.Controls.Add(this.ModeTxt);
             this.Controls.Add(this.button17);
@@ -487,6 +499,7 @@
         private System.Windows.Forms.ToolStripMenuItem configureToolStripMenuItem;
         private System.Windows.Forms.ListBox listBoxKey7;
         private System.Windows.Forms.Timer ButtonPressTimer;
+        private System.Windows.Forms.TextBox txtBoxKeysPressed;
     }
 }
 
