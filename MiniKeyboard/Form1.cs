@@ -34,11 +34,6 @@ namespace MiniKeyboard
                 this.ModeTxt.Text = "Multi-Press";
             }
         }
-
-        private void btn7_Click(object sender, EventArgs e)
-        {
-            this.Button_Reponse(sender, e, this.btn7, this.listBoxKey7, 7); //Passes variables (to button response method) for clicking button 7 to get a specfiic response for that button
-        }
         private void Button_Reponse(object sender, EventArgs e, Button button_clicked, ListBox which_listbox, int button_case_number)
         {
             if (this.Was_A_Different_Button_Pressed(button_clicked.TabIndex))//Calls method to check to see if another button has been pressed by user
@@ -85,7 +80,7 @@ namespace MiniKeyboard
                 switch (button_case_number)
                 {
                     case 1:
-                        this.Str_KeyStrokes = this.Str_KeyStrokes + "*";
+                        this.Str_KeyStrokes = this.Str_KeyStrokes + "*"; 
                         break;
 
                     case 2:
@@ -130,6 +125,15 @@ namespace MiniKeyboard
             {
                 this.Bool_is_button_pressed[i] = false;//Sets variable to false
             }
-        }   
+        }
+
+        private void btn8_Click(object sender, EventArgs e)
+        {
+            this.Button_Reponse(sender, e, this.btn8, this.listBoxKey8, 8);
+        }
+        private void btn7_Click(object sender, EventArgs e)
+        {
+            this.Button_Reponse(sender, e, this.btn7, this.listBoxKey7, 7); //Passes variables (to button response method) for clicking button 7 to get a specfiic response for that button
+        }
     }
 }
