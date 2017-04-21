@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtOutput = new System.Windows.Forms.RichTextBox();
             this.txtBoxWordView = new System.Windows.Forms.RichTextBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.button20 = new System.Windows.Forms.Button();
@@ -49,7 +49,7 @@
             this.btn2 = new System.Windows.Forms.Button();
             this.btn3 = new System.Windows.Forms.Button();
             this.btnAsterisk = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
+            this.btn0 = new System.Windows.Forms.Button();
             this.btnHashTag = new System.Windows.Forms.Button();
             this.ModeTxt = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -65,7 +65,6 @@
             this.configureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBoxKey7 = new System.Windows.Forms.ListBox();
             this.ButtonPressTimer = new System.Windows.Forms.Timer(this.components);
-            this.txtBoxKeysPressed = new System.Windows.Forms.TextBox();
             this.listBoxKey8 = new System.Windows.Forms.ListBox();
             this.listBoxKey9 = new System.Windows.Forms.ListBox();
             this.listBoxKey4 = new System.Windows.Forms.ListBox();
@@ -79,13 +78,13 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // txtOutput
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(7, 36);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(575, 194);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.txtOutput.Location = new System.Drawing.Point(7, 36);
+            this.txtOutput.Name = "txtOutput";
+            this.txtOutput.Size = new System.Drawing.Size(575, 194);
+            this.txtOutput.TabIndex = 1;
+            this.txtOutput.Text = "";
             // 
             // txtBoxWordView
             // 
@@ -300,16 +299,17 @@
             this.btnAsterisk.UseVisualStyleBackColor = false;
             this.btnAsterisk.Click += new System.EventHandler(this.btnAsterisk_Click);
             // 
-            // button18
+            // btn0
             // 
-            this.button18.BackColor = System.Drawing.Color.Lime;
-            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button18.Location = new System.Drawing.Point(230, 501);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(57, 49);
-            this.button18.TabIndex = 58;
-            this.button18.Text = "000\r\n[ _ ]";
-            this.button18.UseVisualStyleBackColor = false;
+            this.btn0.BackColor = System.Drawing.Color.Lime;
+            this.btn0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn0.Location = new System.Drawing.Point(230, 501);
+            this.btn0.Name = "btn0";
+            this.btn0.Size = new System.Drawing.Size(57, 49);
+            this.btn0.TabIndex = 58;
+            this.btn0.Text = "000\r\n[ _ ]";
+            this.btn0.UseVisualStyleBackColor = false;
+            this.btn0.Click += new System.EventHandler(this.btn0_Click);
             // 
             // btnHashTag
             // 
@@ -431,14 +431,6 @@
             // 
             this.ButtonPressTimer.Interval = 700;
             this.ButtonPressTimer.Tick += new System.EventHandler(this.ButtonPressTimer_Tick);
-            // 
-            // txtBoxKeysPressed
-            // 
-            this.txtBoxKeysPressed.Location = new System.Drawing.Point(447, 446);
-            this.txtBoxKeysPressed.Name = "txtBoxKeysPressed";
-            this.txtBoxKeysPressed.Size = new System.Drawing.Size(100, 20);
-            this.txtBoxKeysPressed.TabIndex = 15;
-            this.txtBoxKeysPressed.Visible = false;
             // 
             // listBoxKey8
             // 
@@ -619,11 +611,10 @@
             this.Controls.Add(this.listBoxKey4);
             this.Controls.Add(this.listBoxKey9);
             this.Controls.Add(this.listBoxKey8);
-            this.Controls.Add(this.txtBoxKeysPressed);
             this.Controls.Add(this.listBoxKey7);
             this.Controls.Add(this.ModeTxt);
             this.Controls.Add(this.btnAsterisk);
-            this.Controls.Add(this.button18);
+            this.Controls.Add(this.btn0);
             this.Controls.Add(this.btnHashTag);
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.btn2);
@@ -643,7 +634,7 @@
             this.Controls.Add(this.button20);
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.txtBoxWordView);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtOutput);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -657,7 +648,7 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtOutput;
         private System.Windows.Forms.RichTextBox txtBoxWordView;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.Button button20;
@@ -677,7 +668,7 @@
         private System.Windows.Forms.Button btn2;
         private System.Windows.Forms.Button btn3;
         private System.Windows.Forms.Button btnAsterisk;
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button btn0;
         private System.Windows.Forms.Button btnHashTag;
         private System.Windows.Forms.TextBox ModeTxt;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -693,7 +684,6 @@
         private System.Windows.Forms.ToolStripMenuItem configureToolStripMenuItem;
         private System.Windows.Forms.ListBox listBoxKey7;
         private System.Windows.Forms.Timer ButtonPressTimer;
-        private System.Windows.Forms.TextBox txtBoxKeysPressed;
         private System.Windows.Forms.ListBox listBoxKey8;
         private System.Windows.Forms.ListBox listBoxKey9;
         private System.Windows.Forms.ListBox listBoxKey4;

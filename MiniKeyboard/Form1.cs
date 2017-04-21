@@ -18,6 +18,7 @@ namespace MiniKeyboard
         private int int_ListBox_Index;
         private string Str_KeyStrokes; //String variable created for 
         private int Int_Interval_Required = 700;
+        private int Int_NumberOfCharacters;
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace MiniKeyboard
 
         private void ModeClick_Click(object sender, EventArgs e)
         {
-            if(this.ModeTxt.Text == "Multi-Press") //Method created to change text between multi-press and prediction when user clicks button
+            if (this.ModeTxt.Text == "Multi-Press") //Method created to change text between multi-press and prediction when user clicks button
             {
                 this.ModeTxt.Text = "Prediction";
             }
@@ -39,20 +40,10 @@ namespace MiniKeyboard
         {
             if (this.Was_A_Different_Button_Pressed(button_clicked.TabIndex))//Calls method to check to see if another button has been pressed by user
             {
-                this.ButtonPressTimer_Tick(sender, e); 
+                this.ButtonPressTimer_Tick(sender, e);
             }
-            if (!(this.ModeTxt.Text == "Multi-Press" | this.ModeTxt.Text == "Prediction")) //If 
+            if (!(this.ModeTxt.Text == "Multi-Press" | this.ModeTxt.Text == "Prediction")) //Allows characters to be displayed in both modes
             {
-                switch (button_case_number)
-                {
-                    case 1:
-                        this.Str_KeyStrokes = this.Str_KeyStrokes + "*";
-                        goto Label_Case;
-
-                    case 2:
-                        this.Str_KeyStrokes = this.Str_KeyStrokes + "#";
-                        goto Label_Case;
-                }
                 this.Str_KeyStrokes = this.Str_KeyStrokes + Convert.ToString(button_case_number); //Uses the variable Str_KeyStrokes for when the user clicks one of the character buttons the key number will be appeneded to this variable
             }
             else
@@ -77,29 +68,10 @@ namespace MiniKeyboard
                 {
                     this.Global_Listbox.Items.Add(Convert.ToString(which_listbox.Items[i])); //Gets how many times the user clicks the button and matches it to the correct character in the list
                 }
-                this.Bool_is_button_pressed[button_clicked.TabIndex] = true; 
-                switch (button_case_number)
-                {
-                    case 1:
-                        this.Str_KeyStrokes = this.Str_KeyStrokes + "*"; 
-                        break;
-
-                    case 2:
-                        this.Str_KeyStrokes = this.Str_KeyStrokes + "#";
-                        break;
-
-                    default:
-                        this.Str_KeyStrokes = this.Str_KeyStrokes + Convert.ToString(button_case_number);
-                        break;
-                }
-                this.txtBoxKeysPressed.Text = this.Str_KeyStrokes;
+                this.Bool_is_button_pressed[button_clicked.TabIndex] = true;
+                this.Str_KeyStrokes = this.Str_KeyStrokes + Convert.ToString(button_case_number); //sets the variable Str_KeyStrokes to the specific key number 
                 return;
             }
-        Label_Case:
-            this.txtBoxKeysPressed.Text = this.Str_KeyStrokes;
-            
-            
-               
         }
         private bool Was_A_Different_Button_Pressed(int Button_Pressed)
         {
@@ -110,7 +82,11 @@ namespace MiniKeyboard
         {
             this.ButtonPressTimer.Enabled = false; //Sets the timer to false so that it is not running
             this.Bool_user_first_click = true; //Sets the boolean variable to true
-            this.txtBoxWordView.Text = this.txtBoxWordView.Text.Remove(this.txtBoxWordView.Text.Length - 1);
+            try
+            {
+                this.txtBoxWordView.Text = this.txtBoxWordView.Text.Remove(this.txtBoxWordView.Text.Length - 1);
+            }
+            catch { }
             if (Convert.ToString(this.Global_Listbox.Items[this.int_ListBox_Index]) == "~")
             {
                 this.txtBoxWordView.AppendText(",");//Changes the text to output "," instead of ~
@@ -122,7 +98,7 @@ namespace MiniKeyboard
             this.int_ListBox_Index = 0; //Sets the value to 0 to reset it
             this.Global_Listbox.Items.Clear(); //Clears the items out of the listbox to reset it
             this.txtBoxWordView.Focus(); //Sets input to focus so it can get an input from the user from a mouse click
-            for (int i = 0; i <= 0x10; i++)//Creates a count for the timer 
+            for (int i = 0; i <= 0x20; i++)//Creates a count for the timer 
             {
                 this.Bool_is_button_pressed[i] = false;//Sets variable to false
             }
@@ -164,7 +140,7 @@ namespace MiniKeyboard
         private void btn9_Click(object sender, EventArgs e)
         {
             this.Button_Reponse(sender, e, this.btn9, this.listBoxKey9, 9);//Passes variables (to button response method) for clicking button 9 to get a specfiic response for that button
-        }       
+        }
         private void btnAsterisk_Click(object sender, EventArgs e)
         {
             this.Button_Reponse(sender, e, this.btnAsterisk, this.listBoxKeyAsterisk, 10);//Passes variables (to button response method) for clicking the asterisk button to get a specfiic response for that button
@@ -174,6 +150,28 @@ namespace MiniKeyboard
         {
             this.Button_Reponse(sender, e, this.btnHashTag, this.listBoxKeyHashTag, 11);//Passes variables (to button response method) for clicking the hashtag button to get a specfiic response for that button
         }
-    }
         #endregion
+        private void btn0_Click(object sender, EventArgs e)
+        {
+            if (this.txtBoxWordView.Text.Length > 0)
+            {
+                if (this.ModeTxt.Text == "Multi-Press")
+                {
+                    this.txtOutput.AppendText(this.txtBoxWordView.Text + " ");
+                    for (int i = 0; i == (this.txtBoxWordView.Text.Length - 1); i++)
+                        try
+                        {
+                            {
+                                this.txtBoxWordView.Clear();
+                                this.txtOutput.AppendText(Convert.ToString(this.txtBoxWordView.Text[i]));
+                                break;
+                            }
+                        }
+                        catch { }
+                    this.txtBoxWordView.Clear();
+                    this.Str_KeyStrokes = "";
+                }
+            }
+        }
+    }
 }
