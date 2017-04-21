@@ -41,7 +41,7 @@ namespace MiniKeyboard
             {
                 this.ButtonPressTimer_Tick(sender, e); 
             }
-            if (!(this.ModeTxt.Text == "Multi-Press")) //If 
+            if (!(this.ModeTxt.Text == "Multi-Press" | this.ModeTxt.Text == "Prediction")) //If 
             {
                 switch (button_case_number)
                 {
@@ -128,58 +128,52 @@ namespace MiniKeyboard
             }
         }
 
-        private void btn8_Click(object sender, EventArgs e)
+        #region Character Button Click Methods
+        private void btn1_Click(object sender, EventArgs e)
         {
-            this.Button_Reponse(sender, e, this.btn8, this.listBoxKey8, 8);
+            this.Button_Reponse(sender, e, this.btn1, this.listBoxKey1, 1);//Passes variables (to button response method) for clicking button 1 to get a specfiic response for that button
+        }
+        private void btn2_Click(object sender, EventArgs e)
+        {
+            this.Button_Reponse(sender, e, this.btn2, this.listBoxKey2, 2);//Passes variables (to button response method) for clicking button 2 to get a specfiic response for that button
+        }
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            this.Button_Reponse(sender, e, this.btn3, this.listBoxKey3, 3);//Passes variables (to button response method) for clicking button 3 to get a specfiic response for that button
+        }
+        private void btn4_Click(object sender, EventArgs e)
+        {
+            this.Button_Reponse(sender, e, this.btn4, this.listBoxKey4, 4);//Passes variables (to button response method) for clicking button 4 to get a specfiic response for that button
+        }
+        private void btn5_Click(object sender, EventArgs e)
+        {
+            this.Button_Reponse(sender, e, this.btn5, this.listBoxKey5, 5);//Passes variables (to button response method) for clicking button 5 to get a specfiic response for that button
+        }
+        private void btn6_Click(object sender, EventArgs e)
+        {
+            this.Button_Reponse(sender, e, this.btn6, this.listBoxKey6, 6);//Passes variables (to button response method) for clicking button 6 to get a specfiic response for that button
         }
         private void btn7_Click(object sender, EventArgs e)
         {
             this.Button_Reponse(sender, e, this.btn7, this.listBoxKey7, 7); //Passes variables (to button response method) for clicking button 7 to get a specfiic response for that button
         }
-
+        private void btn8_Click(object sender, EventArgs e)
+        {
+            this.Button_Reponse(sender, e, this.btn8, this.listBoxKey8, 8);//Passes variables (to button response method) for clicking button 8 to get a specfiic response for that button
+        }
         private void btn9_Click(object sender, EventArgs e)
         {
-            this.Button_Reponse(sender, e, this.btn9, this.listBoxKey9, 9);
-        }
-
-        private void btn4_Click(object sender, EventArgs e)
-        {
-            this.Button_Reponse(sender, e, this.btn4, this.listBoxKey4, 4);
-        }
-
-        private void btn5_Click(object sender, EventArgs e)
-        {
-            this.Button_Reponse(sender, e, this.btn5, this.listBoxKey5, 5);
-        }
-
-        private void btn6_Click(object sender, EventArgs e)
-        {
-            this.Button_Reponse(sender, e, this.btn6, this.listBoxKey6, 6);
-        }
-
-        private void btn1_Click(object sender, EventArgs e)
-        {
-            this.Button_Reponse(sender, e, this.btn1, this.listBoxKey1, 1);
-        }
-
-        private void btn2_Click(object sender, EventArgs e)
-        {
-            this.Button_Reponse(sender, e, this.btn2, this.listBoxKey2, 2);
-        }
-
-        private void btn3_Click(object sender, EventArgs e)
-        {
-            this.Button_Reponse(sender, e, this.btn3, this.listBoxKey3, 3);
-        }
-
+            this.Button_Reponse(sender, e, this.btn9, this.listBoxKey9, 9);//Passes variables (to button response method) for clicking button 9 to get a specfiic response for that button
+        }       
         private void btnAsterisk_Click(object sender, EventArgs e)
         {
-            this.Button_Reponse(sender, e, this.btnAsterisk, this.listBoxKeyAsterisk, 10);
+            this.Button_Reponse(sender, e, this.btnAsterisk, this.listBoxKeyAsterisk, 10);//Passes variables (to button response method) for clicking the asterisk button to get a specfiic response for that button
         }
 
         private void btnHashTag_Click(object sender, EventArgs e)
         {
-            this.Button_Reponse(sender, e, this.btnHashTag, this.listBoxKeyHashTag, 11);
+            this.Button_Reponse(sender, e, this.btnHashTag, this.listBoxKeyHashTag, 11);//Passes variables (to button response method) for clicking the hashtag button to get a specfiic response for that button
         }
     }
+        #endregion
 }
