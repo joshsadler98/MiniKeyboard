@@ -58,7 +58,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSave = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.menuExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -353,7 +353,7 @@
             this.toolStripSeparator1,
             this.openToolStripMenuItem,
             this.toolStripSeparator2,
-            this.saveToolStripMenuItem,
+            this.menuSave,
             this.saveAsToolStripMenuItem,
             this.toolStripSeparator3,
             this.menuExit});
@@ -383,11 +383,11 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
-            // saveToolStripMenuItem
+            // menuSave
             // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.saveToolStripMenuItem.Text = "Save";
+            this.menuSave.Name = "menuSave";
+            this.menuSave.Size = new System.Drawing.Size(152, 22);
+            this.menuSave.Text = "Save";
             // 
             // saveAsToolStripMenuItem
             // 
@@ -405,7 +405,7 @@
             this.menuExit.Name = "menuExit";
             this.menuExit.Size = new System.Drawing.Size(152, 22);
             this.menuExit.Text = "Exit";
-            
+            this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
             // 
             // configureMenu
             // 
@@ -681,7 +681,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuSave;
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem menuExit;

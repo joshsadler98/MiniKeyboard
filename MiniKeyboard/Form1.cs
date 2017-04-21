@@ -194,6 +194,11 @@ namespace MiniKeyboard
             catch { }
         }
 
+        private void menuExit_Click(object sender, EventArgs e)
+        {
+            base.Close(); //Closes the program
+        }
+
         
     }
 }
