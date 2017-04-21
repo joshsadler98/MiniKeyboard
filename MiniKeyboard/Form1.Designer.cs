@@ -39,7 +39,7 @@
             this.ModeButton = new System.Windows.Forms.Button();
             this.btn7 = new System.Windows.Forms.Button();
             this.btn8 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn9 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button123 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -67,6 +67,7 @@
             this.ButtonPressTimer = new System.Windows.Forms.Timer(this.components);
             this.txtBoxKeysPressed = new System.Windows.Forms.TextBox();
             this.listBoxKey8 = new System.Windows.Forms.ListBox();
+            this.listBoxKey9 = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -175,16 +176,17 @@
             this.btn8.UseVisualStyleBackColor = false;
             this.btn8.Click += new System.EventHandler(this.btn8_Click);
             // 
-            // button5
+            // btn9
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(292, 336);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(57, 49);
-            this.button5.TabIndex = 47;
-            this.button5.Text = "9\r\nD E F\r\n";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btn9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn9.Location = new System.Drawing.Point(292, 336);
+            this.btn9.Name = "btn9";
+            this.btn9.Size = new System.Drawing.Size(57, 49);
+            this.btn9.TabIndex = 47;
+            this.btn9.Text = "9\r\nD E F\r\n";
+            this.btn9.UseVisualStyleBackColor = false;
+            this.btn9.Click += new System.EventHandler(this.btn9_Click);
             // 
             // button6
             // 
@@ -439,11 +441,29 @@
             this.listBoxKey8.TabIndex = 62;
             this.listBoxKey8.Visible = false;
             // 
+            // listBoxKey9
+            // 
+            this.listBoxKey9.FormattingEnabled = true;
+            this.listBoxKey9.Items.AddRange(new object[] {
+            "d",
+            "e",
+            "f",
+            "9",
+            "D",
+            "E",
+            "F"});
+            this.listBoxKey9.Location = new System.Drawing.Point(535, 296);
+            this.listBoxKey9.Name = "listBoxKey9";
+            this.listBoxKey9.Size = new System.Drawing.Size(29, 30);
+            this.listBoxKey9.TabIndex = 63;
+            this.listBoxKey9.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 566);
+            this.Controls.Add(this.listBoxKey9);
             this.Controls.Add(this.listBoxKey8);
             this.Controls.Add(this.txtBoxKeysPressed);
             this.Controls.Add(this.listBoxKey7);
@@ -460,7 +480,7 @@
             this.Controls.Add(this.button13);
             this.Controls.Add(this.btn7);
             this.Controls.Add(this.btn8);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btn9);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.ModeButton);
             this.Controls.Add(this.button9);
@@ -493,7 +513,7 @@
         private System.Windows.Forms.Button ModeButton;
         private System.Windows.Forms.Button btn7;
         private System.Windows.Forms.Button btn8;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn9;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button123;
         private System.Windows.Forms.Button button8;
@@ -521,6 +541,7 @@
         private System.Windows.Forms.Timer ButtonPressTimer;
         private System.Windows.Forms.TextBox txtBoxKeysPressed;
         private System.Windows.Forms.ListBox listBoxKey8;
+        private System.Windows.Forms.ListBox listBoxKey9;
     }
 }
 
