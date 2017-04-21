@@ -155,7 +155,7 @@ namespace MiniKeyboard
         {
             if (this.txtBoxWordView.Text.Length > 0)
             {
-                if (this.ModeTxt.Text == "Multi-Press")
+                if (this.ModeTxt.Text == "Multi-Press" | this.ModeTxt.Text == "Prediction")
                 {
                     this.txtOutput.AppendText(this.txtBoxWordView.Text + " ");
                     for (int i = 0; i == (this.txtBoxWordView.Text.Length - 1); i++)
