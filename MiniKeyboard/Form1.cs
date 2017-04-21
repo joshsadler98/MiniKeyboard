@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyDialogs;
 
 namespace MiniKeyboard
 {
@@ -177,6 +178,11 @@ namespace MiniKeyboard
         private void btnEnter_Click(object sender, EventArgs e)
         {
             this.txtOutput.AppendText(Environment.NewLine);
+        }
+
+        private void configureMenu_Click(object sender, EventArgs e)
+        {
+            int userInput = Convert.ToInt16
         }
     }
 }

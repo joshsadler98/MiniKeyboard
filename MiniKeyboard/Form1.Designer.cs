@@ -62,7 +62,7 @@
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.configureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configureMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.listBoxKey7 = new System.Windows.Forms.ListBox();
             this.ButtonPressTimer = new System.Windows.Forms.Timer(this.components);
             this.listBoxKey8 = new System.Windows.Forms.ListBox();
@@ -339,7 +339,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.configureToolStripMenuItem});
+            this.configureMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(592, 24);
@@ -406,11 +406,12 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
-            // configureToolStripMenuItem
+            // configureMenu
             // 
-            this.configureToolStripMenuItem.Name = "configureToolStripMenuItem";
-            this.configureToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-            this.configureToolStripMenuItem.Text = "Configure";
+            this.configureMenu.Name = "configureMenu";
+            this.configureMenu.Size = new System.Drawing.Size(72, 20);
+            this.configureMenu.Text = "Configure";
+            this.configureMenu.Click += new System.EventHandler(this.configureMenu_Click);
             // 
             // listBoxKey7
             // 
@@ -683,7 +684,7 @@
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem configureToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configureMenu;
         private System.Windows.Forms.ListBox listBoxKey7;
         private System.Windows.Forms.Timer ButtonPressTimer;
         private System.Windows.Forms.ListBox listBoxKey8;
