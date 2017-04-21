@@ -19,7 +19,6 @@ namespace MiniKeyboard
         private int int_ListBox_Index;
         private string Str_KeyStrokes; //String variable created for 
         private int Int_Interval_Required = 700;
-        private int Int_NumberOfCharacters;
         public Form1()
         {
             InitializeComponent();
@@ -182,7 +181,13 @@ namespace MiniKeyboard
 
         private void configureMenu_Click(object sender, EventArgs e)
         {
-            int userInput = Convert.ToInt16
+            int userInput = Convert.ToInt16(My_Dialogs.InputBox("Please enter the interval delay value for the timer! 1000 is equal to a 1 second delay. The current delay value is" + this.Int_Interval_Required + "."));
+            if (userInput < 700)
+            {
+                userInput = 700;
+            }
+            this.ButtonPressTimer.Interval = userInput;
+            this.Int_Interval_Required = userInput;
         }
     }
 }
