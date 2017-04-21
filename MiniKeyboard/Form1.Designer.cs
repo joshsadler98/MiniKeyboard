@@ -76,6 +76,7 @@
             this.listBoxKeyAsterisk = new System.Windows.Forms.ListBox();
             this.listBoxKeyHashTag = new System.Windows.Forms.ListBox();
             this.saveFileD = new System.Windows.Forms.SaveFileDialog();
+            this.openFileD = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -378,6 +379,7 @@
             this.menuOpen.Name = "menuOpen";
             this.menuOpen.Size = new System.Drawing.Size(152, 22);
             this.menuOpen.Text = "Open";
+            this.menuOpen.Click += new System.EventHandler(this.menuOpen_Click);
             // 
             // toolStripSeparator2
             // 
@@ -603,6 +605,10 @@
             this.listBoxKeyHashTag.TabIndex = 71;
             this.listBoxKeyHashTag.Visible = false;
             // 
+            // openFileD
+            // 
+            this.openFileD.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -702,6 +708,7 @@
         private System.Windows.Forms.ListBox listBoxKeyAsterisk;
         private System.Windows.Forms.ListBox listBoxKeyHashTag;
         private System.Windows.Forms.SaveFileDialog saveFileD;
+        private System.Windows.Forms.OpenFileDialog openFileD;
     }
 }
 

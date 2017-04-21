@@ -21,6 +21,7 @@ namespace MiniKeyboard
         private string Str_KeyStrokes; //String variable created for 
         private int Int_Interval_Required = 700;
         private string StrFilePath = "";
+        private bool Bool_Saving;
         public Form1()
         {
             InitializeComponent();
@@ -155,6 +156,7 @@ namespace MiniKeyboard
         #endregion
         private void btn0_Click(object sender, EventArgs e)
         {
+            this.Bool_Saving = true; //Sets the bool to true as it needs to be saved 
             if (this.txtBoxWordView.Text.Length > 0)
             {
                 if (this.ModeTxt.Text == "Multi-Press" | this.ModeTxt.Text == "Prediction")
@@ -203,7 +205,7 @@ namespace MiniKeyboard
 
         private void menuSave_Click(object sender, EventArgs e)
         {
-            if (this.txtBoxWordView.Text != "")
+            if (this.txtOutput.Text != "")
             {
                 if (this.StrFilePath == "") 
                 {
@@ -212,11 +214,9 @@ namespace MiniKeyboard
                 else
                 {
                     StreamWriter streamWriter = File.CreateText(this.StrFilePath);
-                    if (streamWriter != null)
-                    {
-                        streamWriter.Write(this.txtOutput.Text);
-                        streamWriter.Close();
-                    }
+                    streamWriter.Write(this.txtOutput.Text);
+                    streamWriter.Close();
+                    this.Bool_Saving = false;
                 }
             }
         }
@@ -232,15 +232,36 @@ namespace MiniKeyboard
                 {
                     this.StrFilePath = this.saveFileD.FileName;
                     StreamWriter streamWriter = File.CreateText(this.StrFilePath);
-                    if (streamWriter == null)
-                    {
+                    
                         streamWriter.Write(this.txtOutput.Text);
                         streamWriter.Close();
-                    }
+                        this.Bool_Saving = false;
+                    
                 }
             }
         }
+        private void menuOpen_Click(object sender, EventArgs e)
+        {
+            if (this.Bool_Saving)
+            {
+                this.menuSave_Click(sender, e);
+            }
+            this.openFileD.ShowDialog();
+            this.StrFilePath = this.openFileD.FileName;
+            if(this.StrFilePath != "")
+            {
+                StreamReader streamReader = File.OpenText(this.StrFilePath);
+                try
+                {
+                    for (string strReader = streamReader.ReadLine(); strReader != "\0"; strReader = streamReader.ReadLine())
+                    {
 
-        
+                        this.txtOutput.AppendText(strReader);
+                    }
+                }
+                catch { }
+                streamReader.Close();
+            }
+        }      
     }
 }
