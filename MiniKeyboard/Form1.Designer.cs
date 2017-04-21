@@ -48,7 +48,7 @@
             this.btn1 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
             this.btn3 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
+            this.btnAsterisk = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.ModeTxt = new System.Windows.Forms.TextBox();
@@ -74,6 +74,7 @@
             this.listBoxKey1 = new System.Windows.Forms.ListBox();
             this.listBoxKey2 = new System.Windows.Forms.ListBox();
             this.listBoxKey3 = new System.Windows.Forms.ListBox();
+            this.listBoxKeyAsterisk = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -286,16 +287,17 @@
             this.btn3.UseVisualStyleBackColor = false;
             this.btn3.Click += new System.EventHandler(this.btn3_Click);
             // 
-            // button17
+            // btnAsterisk
             // 
-            this.button17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.Location = new System.Drawing.Point(168, 501);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(57, 49);
-            this.button17.TabIndex = 59;
-            this.button17.Text = "* - _";
-            this.button17.UseVisualStyleBackColor = false;
+            this.btnAsterisk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAsterisk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsterisk.Location = new System.Drawing.Point(168, 501);
+            this.btnAsterisk.Name = "btnAsterisk";
+            this.btnAsterisk.Size = new System.Drawing.Size(57, 49);
+            this.btnAsterisk.TabIndex = 59;
+            this.btnAsterisk.Text = "* - _";
+            this.btnAsterisk.UseVisualStyleBackColor = false;
+            this.btnAsterisk.Click += new System.EventHandler(this.btnAsterisk_Click);
             // 
             // button18
             // 
@@ -574,11 +576,25 @@
             this.listBoxKey3.TabIndex = 69;
             this.listBoxKey3.Visible = false;
             // 
+            // listBoxKeyAsterisk
+            // 
+            this.listBoxKeyAsterisk.FormattingEnabled = true;
+            this.listBoxKeyAsterisk.Items.AddRange(new object[] {
+            "*",
+            "‐",
+            "_"});
+            this.listBoxKeyAsterisk.Location = new System.Drawing.Point(447, 408);
+            this.listBoxKeyAsterisk.Name = "listBoxKeyAsterisk";
+            this.listBoxKeyAsterisk.Size = new System.Drawing.Size(29, 30);
+            this.listBoxKeyAsterisk.TabIndex = 70;
+            this.listBoxKeyAsterisk.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 566);
+            this.Controls.Add(this.listBoxKeyAsterisk);
             this.Controls.Add(this.listBoxKey3);
             this.Controls.Add(this.listBoxKey2);
             this.Controls.Add(this.listBoxKey1);
@@ -590,7 +606,7 @@
             this.Controls.Add(this.txtBoxKeysPressed);
             this.Controls.Add(this.listBoxKey7);
             this.Controls.Add(this.ModeTxt);
-            this.Controls.Add(this.button17);
+            this.Controls.Add(this.btnAsterisk);
             this.Controls.Add(this.button18);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.btn1);
@@ -644,7 +660,7 @@
         private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Button btn2;
         private System.Windows.Forms.Button btn3;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button btnAsterisk;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.TextBox ModeTxt;
@@ -670,6 +686,7 @@
         private System.Windows.Forms.ListBox listBoxKey1;
         private System.Windows.Forms.ListBox listBoxKey2;
         private System.Windows.Forms.ListBox listBoxKey3;
+        private System.Windows.Forms.ListBox listBoxKeyAsterisk;
     }
 }
 
