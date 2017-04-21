@@ -54,7 +54,7 @@
             this.ModeTxt = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.oToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuNew = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -229,7 +229,7 @@
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(57, 49);
             this.btn5.TabIndex = 52;
-            this.btn5.Text = "5\r\nJ K L\r\n\r\n";
+            this.btn5.Text = " 5\r\nJ K L";
             this.btn5.UseVisualStyleBackColor = false;
             this.btn5.Click += new System.EventHandler(this.btn5_Click);
             // 
@@ -351,7 +351,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.oToolStripMenuItem,
+            this.menuNew,
             this.toolStripSeparator1,
             this.menuOpen,
             this.toolStripSeparator2,
@@ -363,11 +363,11 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // oToolStripMenuItem
+            // menuNew
             // 
-            this.oToolStripMenuItem.Name = "oToolStripMenuItem";
-            this.oToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.oToolStripMenuItem.Text = "New";
+            this.menuNew.Name = "menuNew";
+            this.menuNew.Size = new System.Drawing.Size(152, 22);
+            this.menuNew.Text = "New";
             // 
             // toolStripSeparator1
             // 
@@ -686,7 +686,7 @@
         private System.Windows.Forms.TextBox ModeTxt;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem oToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuNew;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem menuOpen;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
