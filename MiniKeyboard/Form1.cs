@@ -166,5 +166,10 @@ namespace MiniKeyboard
         {
             this.Button_Reponse(sender, e, this.btn2, this.listBoxKey2, 2);
         }
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            this.Button_Reponse(sender, e, this.btn3, this.listBoxKey3, 3);
+        }
     }
 }
