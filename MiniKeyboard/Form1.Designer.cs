@@ -50,7 +50,7 @@
             this.btn3 = new System.Windows.Forms.Button();
             this.btnAsterisk = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
+            this.btnHashTag = new System.Windows.Forms.Button();
             this.ModeTxt = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,6 +75,7 @@
             this.listBoxKey2 = new System.Windows.Forms.ListBox();
             this.listBoxKey3 = new System.Windows.Forms.ListBox();
             this.listBoxKeyAsterisk = new System.Windows.Forms.ListBox();
+            this.listBoxKeyHashTag = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -310,16 +311,17 @@
             this.button18.Text = "000\r\n[ _ ]";
             this.button18.UseVisualStyleBackColor = false;
             // 
-            // button19
+            // btnHashTag
             // 
-            this.button19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button19.Location = new System.Drawing.Point(292, 501);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(57, 49);
-            this.button19.TabIndex = 57;
-            this.button19.Text = "# \r\n0.00";
-            this.button19.UseVisualStyleBackColor = false;
+            this.btnHashTag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnHashTag.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHashTag.Location = new System.Drawing.Point(292, 501);
+            this.btnHashTag.Name = "btnHashTag";
+            this.btnHashTag.Size = new System.Drawing.Size(57, 49);
+            this.btnHashTag.TabIndex = 57;
+            this.btnHashTag.Text = "# \r\n0.00";
+            this.btnHashTag.UseVisualStyleBackColor = false;
+            this.btnHashTag.Click += new System.EventHandler(this.btnHashTag_Click);
             // 
             // ModeTxt
             // 
@@ -589,11 +591,25 @@
             this.listBoxKeyAsterisk.TabIndex = 70;
             this.listBoxKeyAsterisk.Visible = false;
             // 
+            // listBoxKeyHashTag
+            // 
+            this.listBoxKeyHashTag.FormattingEnabled = true;
+            this.listBoxKeyHashTag.Items.AddRange(new object[] {
+            "#",
+            "‐",
+            "_"});
+            this.listBoxKeyHashTag.Location = new System.Drawing.Point(535, 408);
+            this.listBoxKeyHashTag.Name = "listBoxKeyHashTag";
+            this.listBoxKeyHashTag.Size = new System.Drawing.Size(29, 30);
+            this.listBoxKeyHashTag.TabIndex = 71;
+            this.listBoxKeyHashTag.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 566);
+            this.Controls.Add(this.listBoxKeyHashTag);
             this.Controls.Add(this.listBoxKeyAsterisk);
             this.Controls.Add(this.listBoxKey3);
             this.Controls.Add(this.listBoxKey2);
@@ -608,7 +624,7 @@
             this.Controls.Add(this.ModeTxt);
             this.Controls.Add(this.btnAsterisk);
             this.Controls.Add(this.button18);
-            this.Controls.Add(this.button19);
+            this.Controls.Add(this.btnHashTag);
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn3);
@@ -662,7 +678,7 @@
         private System.Windows.Forms.Button btn3;
         private System.Windows.Forms.Button btnAsterisk;
         private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button btnHashTag;
         private System.Windows.Forms.TextBox ModeTxt;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -687,6 +703,7 @@
         private System.Windows.Forms.ListBox listBoxKey2;
         private System.Windows.Forms.ListBox listBoxKey3;
         private System.Windows.Forms.ListBox listBoxKeyAsterisk;
+        private System.Windows.Forms.ListBox listBoxKeyHashTag;
     }
 }
 

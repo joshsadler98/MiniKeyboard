@@ -176,5 +176,10 @@ namespace MiniKeyboard
         {
             this.Button_Reponse(sender, e, this.btnAsterisk, this.listBoxKeyAsterisk, 10);
         }
+
+        private void btnHashTag_Click(object sender, EventArgs e)
+        {
+            this.Button_Reponse(sender, e, this.btnHashTag, this.listBoxKeyHashTag, 11);
+        }
     }
 }
