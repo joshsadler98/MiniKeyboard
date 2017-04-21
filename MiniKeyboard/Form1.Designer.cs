@@ -41,7 +41,7 @@
             this.btn8 = new System.Windows.Forms.Button();
             this.btn9 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button123 = new System.Windows.Forms.Button();
+            this.btn4 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
@@ -68,6 +68,7 @@
             this.txtBoxKeysPressed = new System.Windows.Forms.TextBox();
             this.listBoxKey8 = new System.Windows.Forms.ListBox();
             this.listBoxKey9 = new System.Windows.Forms.ListBox();
+            this.listBoxKey4 = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -198,16 +199,17 @@
             this.button6.TabIndex = 46;
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // button123
+            // btn4
             // 
-            this.button123.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button123.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button123.Location = new System.Drawing.Point(168, 391);
-            this.button123.Name = "button123";
-            this.button123.Size = new System.Drawing.Size(57, 49);
-            this.button123.TabIndex = 53;
-            this.button123.Text = "4\r\nG H I\r\n";
-            this.button123.UseVisualStyleBackColor = false;
+            this.btn4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn4.Location = new System.Drawing.Point(168, 391);
+            this.btn4.Name = "btn4";
+            this.btn4.Size = new System.Drawing.Size(57, 49);
+            this.btn4.TabIndex = 53;
+            this.btn4.Text = "4\r\nG H I\r\n";
+            this.btn4.UseVisualStyleBackColor = false;
+            this.btn4.Click += new System.EventHandler(this.btn4_Click);
             // 
             // button8
             // 
@@ -458,11 +460,29 @@
             this.listBoxKey9.TabIndex = 63;
             this.listBoxKey9.Visible = false;
             // 
+            // listBoxKey4
+            // 
+            this.listBoxKey4.FormattingEnabled = true;
+            this.listBoxKey4.Items.AddRange(new object[] {
+            "g",
+            "h",
+            "i",
+            "4",
+            "G",
+            "H",
+            "I"});
+            this.listBoxKey4.Location = new System.Drawing.Point(447, 336);
+            this.listBoxKey4.Name = "listBoxKey4";
+            this.listBoxKey4.Size = new System.Drawing.Size(29, 30);
+            this.listBoxKey4.TabIndex = 64;
+            this.listBoxKey4.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 566);
+            this.Controls.Add(this.listBoxKey4);
             this.Controls.Add(this.listBoxKey9);
             this.Controls.Add(this.listBoxKey8);
             this.Controls.Add(this.txtBoxKeysPressed);
@@ -474,7 +494,7 @@
             this.Controls.Add(this.button14);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.button16);
-            this.Controls.Add(this.button123);
+            this.Controls.Add(this.btn4);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button13);
@@ -515,7 +535,7 @@
         private System.Windows.Forms.Button btn8;
         private System.Windows.Forms.Button btn9;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button123;
+        private System.Windows.Forms.Button btn4;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
@@ -542,6 +562,7 @@
         private System.Windows.Forms.TextBox txtBoxKeysPressed;
         private System.Windows.Forms.ListBox listBoxKey8;
         private System.Windows.Forms.ListBox listBoxKey9;
+        private System.Windows.Forms.ListBox listBoxKey4;
     }
 }
 
