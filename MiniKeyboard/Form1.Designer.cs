@@ -32,7 +32,7 @@
             this.txtOutput = new System.Windows.Forms.RichTextBox();
             this.txtBoxWordView = new System.Windows.Forms.RichTextBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.button20 = new System.Windows.Forms.Button();
+            this.btnEnter = new System.Windows.Forms.Button();
             this.lol = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -99,20 +99,22 @@
             this.richTextBox3.BackColor = System.Drawing.Color.LightGray;
             this.richTextBox3.Location = new System.Drawing.Point(159, 269);
             this.richTextBox3.Name = "richTextBox3";
+            this.richTextBox3.ReadOnly = true;
             this.richTextBox3.Size = new System.Drawing.Size(262, 285);
             this.richTextBox3.TabIndex = 3;
             this.richTextBox3.Text = "";
             // 
-            // button20
+            // btnEnter
             // 
-            this.button20.BackColor = System.Drawing.Color.Yellow;
-            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button20.Location = new System.Drawing.Point(354, 446);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(56, 104);
-            this.button20.TabIndex = 25;
-            this.button20.Text = "Enter";
-            this.button20.UseVisualStyleBackColor = false;
+            this.btnEnter.BackColor = System.Drawing.Color.Yellow;
+            this.btnEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnter.Location = new System.Drawing.Point(354, 446);
+            this.btnEnter.Name = "btnEnter";
+            this.btnEnter.Size = new System.Drawing.Size(56, 104);
+            this.btnEnter.TabIndex = 25;
+            this.btnEnter.Text = "Enter";
+            this.btnEnter.UseVisualStyleBackColor = false;
+            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
             // 
             // lol
             // 
@@ -631,7 +633,7 @@
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.lol);
-            this.Controls.Add(this.button20);
+            this.Controls.Add(this.btnEnter);
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.txtBoxWordView);
             this.Controls.Add(this.txtOutput);
@@ -651,7 +653,7 @@
         private System.Windows.Forms.RichTextBox txtOutput;
         private System.Windows.Forms.RichTextBox txtBoxWordView;
         private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button btnEnter;
         private System.Windows.Forms.Button lol;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button9;

@@ -173,5 +173,10 @@ namespace MiniKeyboard
                 }
             }
         }
+
+        private void btnEnter_Click(object sender, EventArgs e)
+        {
+            this.txtOutput.AppendText(Environment.NewLine);
+        }
     }
 }
