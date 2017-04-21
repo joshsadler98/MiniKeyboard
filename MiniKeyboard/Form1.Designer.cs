@@ -45,7 +45,7 @@
             this.btn5 = new System.Windows.Forms.Button();
             this.btn6 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btn1 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
@@ -71,6 +71,7 @@
             this.listBoxKey4 = new System.Windows.Forms.ListBox();
             this.listBoxKey5 = new System.Windows.Forms.ListBox();
             this.listBoxKey6 = new System.Windows.Forms.ListBox();
+            this.listBoxKey1 = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -247,16 +248,17 @@
             this.button13.TabIndex = 50;
             this.button13.UseVisualStyleBackColor = false;
             // 
-            // button14
+            // btn1
             // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(168, 446);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(57, 49);
-            this.button14.TabIndex = 56;
-            this.button14.Text = "1\r\nP Q R S";
-            this.button14.UseVisualStyleBackColor = false;
+            this.btn1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn1.Location = new System.Drawing.Point(168, 446);
+            this.btn1.Name = "btn1";
+            this.btn1.Size = new System.Drawing.Size(57, 49);
+            this.btn1.TabIndex = 56;
+            this.btn1.Text = "1\r\nP Q R S";
+            this.btn1.UseVisualStyleBackColor = false;
+            this.btn1.Click += new System.EventHandler(this.btn1_Click);
             // 
             // button15
             // 
@@ -515,11 +517,31 @@
             this.listBoxKey6.TabIndex = 66;
             this.listBoxKey6.Visible = false;
             // 
+            // listBoxKey1
+            // 
+            this.listBoxKey1.FormattingEnabled = true;
+            this.listBoxKey1.Items.AddRange(new object[] {
+            "p",
+            "q",
+            "r",
+            "s",
+            "1",
+            "P",
+            "Q",
+            "R",
+            "S"});
+            this.listBoxKey1.Location = new System.Drawing.Point(447, 372);
+            this.listBoxKey1.Name = "listBoxKey1";
+            this.listBoxKey1.Size = new System.Drawing.Size(29, 30);
+            this.listBoxKey1.TabIndex = 67;
+            this.listBoxKey1.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 566);
+            this.Controls.Add(this.listBoxKey1);
             this.Controls.Add(this.listBoxKey6);
             this.Controls.Add(this.listBoxKey5);
             this.Controls.Add(this.listBoxKey4);
@@ -531,7 +553,7 @@
             this.Controls.Add(this.button17);
             this.Controls.Add(this.button18);
             this.Controls.Add(this.button19);
-            this.Controls.Add(this.button14);
+            this.Controls.Add(this.btn1);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.button16);
             this.Controls.Add(this.btn4);
@@ -579,7 +601,7 @@
         private System.Windows.Forms.Button btn5;
         private System.Windows.Forms.Button btn6;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
@@ -605,6 +627,7 @@
         private System.Windows.Forms.ListBox listBoxKey4;
         private System.Windows.Forms.ListBox listBoxKey5;
         private System.Windows.Forms.ListBox listBoxKey6;
+        private System.Windows.Forms.ListBox listBoxKey1;
     }
 }
 
