@@ -59,7 +59,7 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuSave = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuSaveAs = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.menuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.configureMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,6 +75,7 @@
             this.listBoxKey3 = new System.Windows.Forms.ListBox();
             this.listBoxKeyAsterisk = new System.Windows.Forms.ListBox();
             this.listBoxKeyHashTag = new System.Windows.Forms.ListBox();
+            this.saveFileD = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -354,7 +355,7 @@
             this.openToolStripMenuItem,
             this.toolStripSeparator2,
             this.menuSave,
-            this.saveAsToolStripMenuItem,
+            this.menuSaveAs,
             this.toolStripSeparator3,
             this.menuExit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -388,12 +389,14 @@
             this.menuSave.Name = "menuSave";
             this.menuSave.Size = new System.Drawing.Size(152, 22);
             this.menuSave.Text = "Save";
+            this.menuSave.Click += new System.EventHandler(this.menuSave_Click);
             // 
-            // saveAsToolStripMenuItem
+            // menuSaveAs
             // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.saveAsToolStripMenuItem.Text = "Save as";
+            this.menuSaveAs.Name = "menuSaveAs";
+            this.menuSaveAs.Size = new System.Drawing.Size(152, 22);
+            this.menuSaveAs.Text = "Save as";
+            this.menuSaveAs.Click += new System.EventHandler(this.menuSaveAs_Click);
             // 
             // toolStripSeparator3
             // 
@@ -682,7 +685,7 @@
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem menuSave;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuSaveAs;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem menuExit;
         private System.Windows.Forms.ToolStripMenuItem configureMenu;
@@ -698,6 +701,7 @@
         private System.Windows.Forms.ListBox listBoxKey3;
         private System.Windows.Forms.ListBox listBoxKeyAsterisk;
         private System.Windows.Forms.ListBox listBoxKeyHashTag;
+        private System.Windows.Forms.SaveFileDialog saveFileD;
     }
 }
 

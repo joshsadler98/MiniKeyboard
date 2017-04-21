@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyDialogs;
+using System.IO;
 
 namespace MiniKeyboard
 {
@@ -19,6 +20,7 @@ namespace MiniKeyboard
         private int int_ListBox_Index;
         private string Str_KeyStrokes; //String variable created for 
         private int Int_Interval_Required = 700;
+        private string StrFilePath = "";
         public Form1()
         {
             InitializeComponent();
@@ -197,6 +199,46 @@ namespace MiniKeyboard
         private void menuExit_Click(object sender, EventArgs e)
         {
             base.Close(); //Closes the program
+        }
+
+        private void menuSave_Click(object sender, EventArgs e)
+        {
+            if (this.txtBoxWordView.Text != "")
+            {
+                if (this.StrFilePath == "") 
+                {
+                    this.menuSaveAs_Click(sender, e);
+                }
+                else
+                {
+                    StreamWriter streamWriter = File.CreateText(this.StrFilePath);
+                    if (streamWriter != null)
+                    {
+                        streamWriter.Write(this.txtOutput.Text);
+                        streamWriter.Close();
+                    }
+                }
+            }
+        }
+
+        private void menuSaveAs_Click(object sender, EventArgs e)
+        {
+            if (this.txtOutput.Text != "")
+            {
+                this.saveFileD.Filter = "txt files (*.txt)|*.txt|All files (*.*|*.*";
+                this.saveFileD.FilterIndex = 2;
+                this.saveFileD.RestoreDirectory = true;
+                if(this.saveFileD.ShowDialog() == DialogResult.OK)
+                {
+                    this.StrFilePath = this.saveFileD.FileName;
+                    StreamWriter streamWriter = File.CreateText(this.StrFilePath);
+                    if (streamWriter == null)
+                    {
+                        streamWriter.Write(this.txtOutput.Text);
+                        streamWriter.Close();
+                    }
+                }
+            }
         }
 
         
