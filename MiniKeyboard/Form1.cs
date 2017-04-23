@@ -75,6 +75,7 @@ namespace MiniKeyboard
                 this.Str_KeyStrokes = this.Str_KeyStrokes + Convert.ToString(button_case_number); //sets the variable Str_KeyStrokes to the specific key number 
                 return;
             }
+            
         }
         private bool Was_A_Different_Button_Pressed(int Button_Pressed)
         {
@@ -174,6 +175,8 @@ namespace MiniKeyboard
                         catch { }
                     this.txtBoxWordView.Clear();
                     this.Str_KeyStrokes = "";
+                    this.txtBoxKeyStrokes.Text = this.Str_KeyStrokes;
+                    
                 }
             }
         }
@@ -262,6 +265,15 @@ namespace MiniKeyboard
                 catch { }
                 streamReader.Close();
             }
+        }
+
+        private void menuNew_Click(object sender, EventArgs e)
+        {
+            if (this.Bool_Saving)
+            {
+                this.menuSave_Click(sender, e);
+            }
+            this.txtOutput.Clear();
         }      
     }
 }

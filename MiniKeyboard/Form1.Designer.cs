@@ -77,6 +77,7 @@
             this.listBoxKeyHashTag = new System.Windows.Forms.ListBox();
             this.saveFileD = new System.Windows.Forms.SaveFileDialog();
             this.openFileD = new System.Windows.Forms.OpenFileDialog();
+            this.txtBoxKeyStrokes = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -366,49 +367,50 @@
             // menuNew
             // 
             this.menuNew.Name = "menuNew";
-            this.menuNew.Size = new System.Drawing.Size(152, 22);
+            this.menuNew.Size = new System.Drawing.Size(112, 22);
             this.menuNew.Text = "New";
+            this.menuNew.Click += new System.EventHandler(this.menuNew_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(109, 6);
             // 
             // menuOpen
             // 
             this.menuOpen.Name = "menuOpen";
-            this.menuOpen.Size = new System.Drawing.Size(152, 22);
+            this.menuOpen.Size = new System.Drawing.Size(112, 22);
             this.menuOpen.Text = "Open";
             this.menuOpen.Click += new System.EventHandler(this.menuOpen_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(109, 6);
             // 
             // menuSave
             // 
             this.menuSave.Name = "menuSave";
-            this.menuSave.Size = new System.Drawing.Size(152, 22);
+            this.menuSave.Size = new System.Drawing.Size(112, 22);
             this.menuSave.Text = "Save";
             this.menuSave.Click += new System.EventHandler(this.menuSave_Click);
             // 
             // menuSaveAs
             // 
             this.menuSaveAs.Name = "menuSaveAs";
-            this.menuSaveAs.Size = new System.Drawing.Size(152, 22);
+            this.menuSaveAs.Size = new System.Drawing.Size(112, 22);
             this.menuSaveAs.Text = "Save as";
             this.menuSaveAs.Click += new System.EventHandler(this.menuSaveAs_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(109, 6);
             // 
             // menuExit
             // 
             this.menuExit.Name = "menuExit";
-            this.menuExit.Size = new System.Drawing.Size(152, 22);
+            this.menuExit.Size = new System.Drawing.Size(112, 22);
             this.menuExit.Text = "Exit";
             this.menuExit.Click += new System.EventHandler(this.menuExit_Click);
             // 
@@ -609,11 +611,20 @@
             // 
             this.openFileD.FileName = "openFileDialog1";
             // 
+            // txtBoxKeyStrokes
+            // 
+            this.txtBoxKeyStrokes.Location = new System.Drawing.Point(447, 501);
+            this.txtBoxKeyStrokes.Name = "txtBoxKeyStrokes";
+            this.txtBoxKeyStrokes.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxKeyStrokes.TabIndex = 72;
+            this.txtBoxKeyStrokes.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 566);
+            this.Controls.Add(this.txtBoxKeyStrokes);
             this.Controls.Add(this.listBoxKeyHashTag);
             this.Controls.Add(this.listBoxKeyAsterisk);
             this.Controls.Add(this.listBoxKey3);
@@ -709,6 +720,7 @@
         private System.Windows.Forms.ListBox listBoxKeyHashTag;
         private System.Windows.Forms.SaveFileDialog saveFileD;
         private System.Windows.Forms.OpenFileDialog openFileD;
+        private System.Windows.Forms.TextBox txtBoxKeyStrokes;
     }
 }
 
