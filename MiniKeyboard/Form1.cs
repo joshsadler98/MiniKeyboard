@@ -17,26 +17,15 @@ namespace MiniKeyboard
         private bool Bool_user_first_click = true; //Boolean created for user first click of button
         private bool[] Bool_is_button_pressed = new bool[0x100]; //Arrary created for if the button is pressed by user
         private ListBox Global_Listbox = new ListBox(); //Creates a private listBox with the variable name Global_Listbox
-        private int int_ListBox_Index;
+        private int int_ListBox_Index; //Used for selecting a character from listBox
         private string Str_KeyStrokes; //String variable created for 
-        private int Int_Interval_Required = 700;
-        private string StrFilePath = "";
-        private bool Bool_Saving;
+        private int Int_Interval_Required = 700; //Sets the variable which can be changed by user and used for the timer interval 
+        private string StrFilePath = ""; // Used for changing to the file path when saving, opening a file
+        private bool Bool_Saving; //Used to check if the program needs saving or not
+
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void ModeClick_Click(object sender, EventArgs e)
-        {
-            if (this.ModeTxt.Text == "Multi-Press") //Method created to change text between multi-press and prediction when user clicks button
-            {
-                this.ModeTxt.Text = "Prediction";
-            }
-            else
-            {
-                this.ModeTxt.Text = "Multi-Press";
-            }
         }
 
         private void Button_Reponse(object sender, EventArgs e, Button button_clicked, ListBox which_listbox, int button_case_number)
@@ -51,10 +40,10 @@ namespace MiniKeyboard
             }
             else
             {
-                if (!this.Bool_user_first_click)
+                if (!this.Bool_user_first_click) //If users first click
                 {
                     this.ButtonPressTimer.Enabled = false;
-                    this.int_ListBox_Index++;
+                    this.int_ListBox_Index++; //Creates a count
                     if (this.int_ListBox_Index > (which_listbox.Items.Count - 1))
                     {
                         this.int_ListBox_Index = 0;
@@ -77,6 +66,7 @@ namespace MiniKeyboard
             }
             
         }
+
         private bool Was_A_Different_Button_Pressed(int Button_Pressed)
         {
             return (!this.Bool_user_first_click && !this.Bool_is_button_pressed[Button_Pressed]);//Method created to check if another button has been pressed by the user
@@ -155,6 +145,8 @@ namespace MiniKeyboard
             this.Button_Reponse(sender, e, this.btnHashTag, this.listBoxKeyHashTag, 11);//Passes variables (to button response method) for clicking the hashtag button to get a specfiic response for that button
         }
         #endregion
+
+        #region Other Button Click Methods
         private void btn0_Click(object sender, EventArgs e)
         {
             this.Bool_Saving = true; //Sets the bool to true as it needs to be saved 
@@ -162,20 +154,20 @@ namespace MiniKeyboard
             {
                 if (this.ModeTxt.Text == "Multi-Press" | this.ModeTxt.Text == "Prediction")
                 {
-                    this.txtOutput.AppendText(this.txtBoxWordView.Text + " ");
+                    this.txtOutput.AppendText(this.txtBoxWordView.Text + " "); 
                     for (int i = 0; i == (this.txtBoxWordView.Text.Length - 1); i++)
-                        try
+                        try //Try and catch method to stop exception from crashing program
                         {
                             {
-                                this.txtBoxWordView.Clear();
-                                this.txtOutput.AppendText(Convert.ToString(this.txtBoxWordView.Text[i]));
+                                this.txtBoxWordView.Clear(); 
+                                this.txtOutput.AppendText(Convert.ToString(this.txtBoxWordView.Text[i])); //Sets the txt of text box txtOutput
                                 break;
                             }
                         }
                         catch { }
-                    this.txtBoxWordView.Clear();
+                    this.txtBoxWordView.Clear(); 
                     this.Str_KeyStrokes = "";
-                    this.txtBoxKeyStrokes.Text = this.Str_KeyStrokes;
+                    this.txtBoxKeyStrokes.Text = this.Str_KeyStrokes; //Clears the varaible Str_KeyStrokes
                     
                 }
             }
@@ -183,19 +175,34 @@ namespace MiniKeyboard
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            this.txtOutput.AppendText(Environment.NewLine);
+            this.txtOutput.AppendText(Environment.NewLine); //Used to create a new line in the tex box txtOutput 
         }
 
+        private void ModeClick_Click(object sender, EventArgs e)
+        {
+            if (this.ModeTxt.Text == "Multi-Press") //Method created to change text between multi-press and prediction when user clicks button
+            {
+                this.ModeTxt.Text = "Prediction";
+            }
+            else
+            {
+                this.ModeTxt.Text = "Multi-Press";
+            }
+        }
+
+        #endregion
+
+        #region Menu Button Click Methods
         private void configureMenu_Click(object sender, EventArgs e)
         {
-            try
+            try //Try and catch method to catch exception from crashing program
             {
-                int userInput = Convert.ToInt16(My_Dialogs.InputBox("Please enter the interval delay value for the timer! 1000 is equal to a 1 second delay. The current delay value is" + this.Int_Interval_Required + "."));
-                if (userInput < 700)
+                int userInput = Convert.ToInt16(My_Dialogs.InputBox("Please enter the interval delay value for the timer! 1000 is equal to a 1 second delay. Cannot be below 700. The current delay value is" + this.Int_Interval_Required + "."));
+                if (userInput < 700)  //Method used to allow user to change the interval of the timer
                 {
-                    userInput = 700;
+                    userInput = 700; //Does not allow the user to change it below 700
                 }
-                this.ButtonPressTimer.Interval = userInput;
+                this.ButtonPressTimer.Interval = userInput; //Changes the button interval timer to that of which the user changes it too
                 this.Int_Interval_Required = userInput;
             }
             catch { }
@@ -212,11 +219,11 @@ namespace MiniKeyboard
             {
                 if (this.StrFilePath == "") 
                 {
-                    this.menuSaveAs_Click(sender, e);
+                    this.menuSaveAs_Click(sender, e); //Opens the save as click event
                 }
                 else
                 {
-                    StreamWriter streamWriter = File.CreateText(this.StrFilePath);
+                    StreamWriter streamWriter = File.CreateText(this.StrFilePath); //Creates the file with the file path name
                     streamWriter.Write(this.txtOutput.Text);
                     streamWriter.Close();
                     this.Bool_Saving = false;
@@ -228,13 +235,13 @@ namespace MiniKeyboard
         {
             if (this.txtOutput.Text != "")
             {
-                this.saveFileD.Filter = "txt files (*.txt)|*.txt|All files (*.*|*.*";
-                this.saveFileD.FilterIndex = 2;
+                this.saveFileD.Filter = "txt files (*.txt)|*.txt|All files (*.*|*.*"; //Sets the filter for saving a file
+                this.saveFileD.FilterIndex = 2; //Sets the current filter index
                 this.saveFileD.RestoreDirectory = true;
-                if(this.saveFileD.ShowDialog() == DialogResult.OK)
+                if(this.saveFileD.ShowDialog() == DialogResult.OK) //Shows the user the dialog
                 {
                     this.StrFilePath = this.saveFileD.FileName;
-                    StreamWriter streamWriter = File.CreateText(this.StrFilePath);
+                    StreamWriter streamWriter = File.CreateText(this.StrFilePath); //Creates the file with the file path and the file name
                     
                         streamWriter.Write(this.txtOutput.Text);
                         streamWriter.Close();
@@ -247,19 +254,19 @@ namespace MiniKeyboard
         {
             if (this.Bool_Saving)
             {
-                this.menuSave_Click(sender, e);
+                this.menuSave_Click(sender, e); //Opens the save click event
             }
-            this.openFileD.ShowDialog();
+            this.openFileD.ShowDialog(); //Shows the open file diaglog
             this.StrFilePath = this.openFileD.FileName;
             if(this.StrFilePath != "")
             {
-                StreamReader streamReader = File.OpenText(this.StrFilePath);
+                StreamReader streamReader = File.OpenText(this.StrFilePath); //Opens the file using the file path
                 try
                 {
-                    for (string strReader = streamReader.ReadLine(); strReader != "\0"; strReader = streamReader.ReadLine())
+                    for (string strReader = streamReader.ReadLine(); strReader != "\0"; strReader = streamReader.ReadLine()) //strReader is set to the text of the file it is opening
                     {
 
-                        this.txtOutput.AppendText(strReader);
+                        this.txtOutput.AppendText(strReader); //changes the text of text box txtOut depending on the text from the file opened using the variable strReader
                     }
                 }
                 catch { }
@@ -271,9 +278,10 @@ namespace MiniKeyboard
         {
             if (this.Bool_Saving)
             {
-                this.menuSave_Click(sender, e);
+                this.menuSave_Click(sender, e); //Opens the save click event
             }
-            this.txtOutput.Clear();
-        }      
+            this.txtOutput.Clear(); //Clears all the text from the text box
+        }
+        #endregion
     }
 }
